@@ -1,0 +1,24 @@
+<!-- username input -->
+<mat-form-field appearance="fill" style="width:300px !important">
+	<mat-label>Username</mat-label>
+	<input matInput [(ngModel)]="oLoginData.username">
+</mat-form-field>
+
+	<br>
+	<!-- password input -->
+	<mat-form-field appearance="fill" style="width:300px !important">
+		<mat-label>Password</mat-label>
+		<input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="oLoginData.password">
+		<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</button>
+	</mat-form-field>
+
+	<br>
+	<!-- login button -->
+	<button mat-raised-button color="primary"  (click)="onDialogLoginBtnPress($event)" style="left: 40% !important">
+Log in
+</button>
+
+	<br>
+	<strong *ngIf="bLoginFailed" style="color:red;">The username or password is not correct!</strong>

@@ -1,0 +1,38 @@
+/* Add application styles & imports to this file! */
+/* import the angular material theme color
+Prebuild themes:
+deeppurple-amber.css
+indigo-pink.css
+pink-bluegrey.css
+purple-green.css
+*/
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+#menu-section {
+  border-radius: 0ex;
+  border-style: double;
+  width: 92%;
+  margin-left: 2.5%;
+  padding-left: 2.5%;
+  margin-bottom: 1.5%;
+}
+#left-section-filters {
+  float: left;
+  margin-left: 2.5%;
+  width: 18%;
+  text-align: justify;
+  border-style: double;
+}
+#right-section-content {
+  float: right;
+  margin-right: 2.5%;
+  width: 74%;
+  text-align: justify;
+  border-style: double;
+}
+
+h1 {
+  font-family: Lato;
+  font-style: italic;
+  color: grey;
+}

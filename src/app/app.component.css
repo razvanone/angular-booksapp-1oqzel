@@ -1,0 +1,11 @@
+p {
+  font-family: Lato;
+}
+
+.text-error {
+  color: red;
+}
+
+.text-valid {
+  color: green;
+}

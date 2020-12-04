@@ -1,0 +1,38 @@
+<div class="grid-container">
+	<div class="Photo">
+		<img #coverPhoto (click)="handleBookCoverClick(coverPhoto)"  src="{{bookDetails.CoverPhoto}}" alt="{{bookDetails.Id}}" width="60" height="90">
+  </div>
+
+		<div class="Details">
+			<small>Title: {{bookDetails.Title | titlecase}}</small>
+			<br>
+			<small>Author: {{bookDetails.Author | uppercase}}</small>
+			<br>
+			<small>Rating: {{bookDetails.Rating}} </small>
+
+			<small [ngSwitch]="bookDetails.Rating | number:'1.0-0'">
+      <small *ngSwitchCase="1">&#9733;</small>
+			<small *ngSwitchCase="2">&#9733;&#9733;</small>
+			<small *ngSwitchCase="3">&#9733;&#9733;&#9733;</small>
+			<small *ngSwitchCase="4">&#9733;&#9733;&#9733;&#9733; </small>
+			<small *ngSwitchCase="5">&#9733;&#9733;&#9733;&#9733;&#9733;</small>
+			<small *ngSwitchDefault>Not rated</small>
+			</small>
+
+			<br>
+			<small *ngIf="bookDetails.Price > 0">Price:</small>
+			<small
+        [style.text-decoration] = "bookDetails.OffPercent > 0 ? 'line-through' : 'none' " >
+           {{bookDetails.Price | currency: 'USD'}} 
+      </small>
+			<small
+        *ngIf="bookDetails.OffPercent > 0"
+        [style.color] = "bookDetails.OffPercent > 0 ? 'red' : 'black' "
+        >
+        {{bookDetails.Price - ((bookDetails.Price/100)*bookDetails.OffPercent)| currency: 'USD'}}
+      </small>
+			<br>
+			<small *ngIf="bookDetails.OffPercent > 0" >Discount: {{bookDetails.OffPercent / 100 | percent}}</small>
+
+		</div>
+	</div>

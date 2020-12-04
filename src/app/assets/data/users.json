@@ -1,0 +1,43 @@
+[
+  {
+    "userName": "user-john",
+    "password": "john",
+    "fullname": "John D.",
+    "emailAddress": "john@book-store.com",
+    "homeAddress": "Chicago, Lake Street",
+    "phoneNo": "0711143432"
+
+  },
+  {
+    "userName": "user-laura",
+    "password": "laura",
+    "name": "Laura K.",
+    "emailAddress": "laura@book-store.com",
+    "homeAddress": "Los Angeles, Maple Sreet",
+    "phoneNo": "0722224432"
+  },
+  {
+    "userName": "user-tom",
+    "password": "tom",
+    "name": "Tom H.",
+    "emailAddress": "tom@book-store.com",
+    "homeAddress": "New York, Oak Street",
+    "phoneNo": "07333456532"
+  },
+  {
+    "userName": "user-veronica",
+    "password": "veronica",
+    "name": "Veronica M.",
+    "emailAddress": "veronica@book-store.com",
+    "homeAddress": "Seattle, Elm Street",
+    "phoneNo": "0744455432"
+  },
+  {
+    "userName": "user-louie",
+    "password": "louie",
+    "name": "Louie A.",
+    "emailAddress": "louie@book-store.com",
+    "homeAddress": "Wisconsin, Cedar Knoll Street",
+    "phoneNo": "0755555432"
+  }
+  ]

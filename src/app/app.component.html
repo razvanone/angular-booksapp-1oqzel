@@ -1,0 +1,28 @@
+<hello name="{{ name }}"></hello>
+
+<h1>The best place to search for your favourite books</h1>
+
+<em *ngIf="bIsUserLoggedIn">{{sUserName}}: </em>
+<b *ngIf="bIsUserLoggedIn" [ngClass]="averageValueState">{{getReadBooksAvg()}}</b>
+
+<br />
+
+<!-- <strong> Current page: {{iCurrentPage}}<strong> -->
+
+<!-- <button (click)="onGetUsersBtnPress($event)">Get users</button> -->
+
+<button *ngIf="!bIsUserLoggedIn" mat-raised-button color="primary"  (click)="onLoginBtnPress($event)">
+   Log in
+</button>
+
+<button *ngIf="bIsUserLoggedIn" mat-raised-button color="primary"  (click)="onLogoutBtnPress($event)">
+   Log out
+</button>
+
+<div id="menu-section">
+	<a style="padding-right: 5.5%;" routerLink="/books">Books</a>
+	<a *ngIf="bIsUserLoggedIn" style="padding-right: 5.5%;" routerLink="/user">User Details</a>
+	<a style="padding-right: 5.5%;" routerLink="/contact">Contact</a>
+</div>
+
+<router-outlet></router-outlet>

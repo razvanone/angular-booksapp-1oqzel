@@ -1,0 +1,49 @@
+<div id="left-section-filters">
+	<h3>Filters</h3>
+	<!-- <p><em>This is the side content</em></p> -->
+	<!-- 
+  <em>Author</em>
+  <input
+    [disabled]="bIsFieldDisabled"
+    #sFilterInputId
+    [(ngModel)]="sFilterInputValue"
+    style="width: 90px;"
+  /> -->
+
+	<mat-form-field class="example-form-field">
+		<mat-label>Author</mat-label>
+		<input matInput
+      type="text"
+      [(ngModel)]="sFilterInputValue"
+      [disabled]="bIsFieldDisabled"
+     #sFilterInputId >
+		<button mat-button
+      *ngIf="sFilterInputValue"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="sFilterInputValue=''">
+    <mat-icon>close</mat-icon>
+  </button>
+	</mat-form-field>
+
+	<!-- <p>Filter results for: {{sFilterInputValue}}</p> -->
+
+	<!-- <button (click)="onFilterBtnPress($event, sFilterInputId)">
+    Apply filter
+  </button> -->
+
+	<!-- text with icon button -->
+	<button mat-raised-button color="primary"  (click)="onFilterBtnPress($event, sFilterInputId)">
+   <mat-icon>search</mat-icon>
+   Apply filter
+  </button>
+
+	<!-- icon button -->
+	<!-- 
+  <button mat-mini-fab color="primary" (click)="onFilterBtnPress($event, sFilterInputId)">
+    <mat-icon>search</mat-icon>
+  </button> 
+  -->
+
+</div>

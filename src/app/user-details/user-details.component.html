@@ -1,0 +1,47 @@
+<div class="container">
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+		<p>
+			<label for="usernameInput"> Username </label>
+			<input type="text" id="usernameInput" name="username" formControlName="username"/>
+  </p>
+			<p>
+				<label for="fullNameInput"> Full Name </label>
+				<input type="text" id="fullNameInput" name="fullname" formControlName="fullname"/>
+  </p>
+
+				<p>
+					<label for="emailInput">Email Address </label>
+					<input type="text" id="emailInput" name="emailAddress" formControlName="emailAddress"/>
+  </p>
+
+					<p>
+						<label for="addressInput">Home Address </label>
+						<input type="text" id="addressInput" name="homeAddress" formControlName="homeAddress"/>
+  </p>
+
+						<p>
+							<label for="phoneInput">Phone Number </label>
+							<input type="text" id="phoneInput" name="phoneNo" formControlName="phoneNo"/>
+  </p>
+
+							<p>
+								<label for="avgBooksInput">Books Average </label>
+								<input type="text" id="avgBooksInput" name="avgBooksPerMonth" formControlName="avgBooksPerMonth"/>
+  </p>
+
+								<p>
+									<label for="passwordInput">Password </label>
+									<input type="password" id="passwordInput" name="password1" formControlName="password1"/>
+  </p>
+
+									<p>
+										<label for="passwordInput">Re-type Password </label>
+										<input type="password" id="passwordInput" name="password2" formControlName="password2" />
+  </p>
+
+										<p>
+											<button type="submit">Submit</button>
+										</p>
+	</form>
+	<p *ngIf="bFormError" style="color: red;">The form data is not valid!</p>
+</div>

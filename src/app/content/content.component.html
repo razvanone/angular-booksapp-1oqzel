@@ -1,0 +1,76 @@
+<div id="right-section-content">
+	<h3>List of books for {{sUserNme}}</h3>
+	<!-- <p><em>This is the main content</em>
+		<br>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est mi, commodo vitae mauris at, sagittis
+		vehicula sem. Quisque malesuada dui at justo maximus, vel placerat nibh blandit. Phasellus quis ipsum aliquam,
+		fringilla ante sit amet, sagittis magna. In at dignissim eros, id vulputate tellus. Quisque orci urna, pretium
+		in porttitor et, rhoncus in nulla. Aenean viverra ante in velit tincidunt, sit amet tincidunt ante suscipit. In
+		malesuada consectetur molestie.
+	</p> -->
+
+
+	<mat-tab-group mat-align-tabs="start">
+		<mat-tab label="Image View">
+			<div *ngFor="let book of aBooksList | paginate: { itemsPerPage: 3, currentPage: iCurrentPage };index as i">
+				<app-book-details-small [bookDetails]="book"></app-book-details-small>
+			</div>
+
+			<!-- <button (click) = "prevPage()"><< Previous Page</button>
+      <b> {{iCurrentPage}} </b>
+      <button (click) = "nextPage()">Next Page >></button> -->
+
+			<mat-paginator [length]="aBooksList.length" [pageSize]="3" (page)="onPaginateChange($event)">
+			</mat-paginator>
+
+		</mat-tab>
+		<mat-tab label="Table View">
+			<!-- the books table -->
+			<!-- <table style="width:100%">
+				<tr>
+					<th *ngFor="let colHdr of aColHeaders">
+						{{colHdr}}
+					</th>
+				</tr>
+				<tr *ngFor="let book of aBooksTableData">
+					<td *ngFor="let colHdr of aColHeaders">
+						{{book[colHdr]}}
+					</td>
+				</tr>
+			</table> -->
+
+			<table mat-table [dataSource]="matTableDataSource" class="mat-elevation-z8">
+				<!-- Title Column -->
+				<ng-container matColumnDef="Title">
+					<th mat-header-cell *matHeaderCellDef> Title </th>
+					<td mat-cell *matCellDef="let element"> {{element.Title | titlecase}} </td>
+				</ng-container>
+
+				<!-- Author Column -->
+				<ng-container matColumnDef="Author">
+					<th mat-header-cell *matHeaderCellDef> Author </th>
+					<td mat-cell *matCellDef="let element"> {{element.Author}} </td>
+				</ng-container>
+
+				<!-- Rating Column -->
+				<ng-container matColumnDef="Rating">
+					<th mat-header-cell *matHeaderCellDef> Rating </th>
+					<td mat-cell *matCellDef="let element"> {{element.Rating}} </td>
+				</ng-container>
+
+				<!-- Price Column -->
+				<ng-container matColumnDef="Price">
+					<th mat-header-cell *matHeaderCellDef> Price </th>
+					<td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="aColHeaders"></tr>
+				<tr mat-row *matRowDef="let row; columns: aColHeaders;"></tr>
+
+			</table>
+
+		</mat-tab>
+	</mat-tab-group>
+
+
+</div>
